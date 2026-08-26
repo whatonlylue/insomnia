@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 cleanup() {
-    sudo pmset -b disablesleep 0
+    sudo pmset -bc disablesleep 0
     exit 1;
 }
 
 trap cleanup SIGINT
 
-sudo pmset -b disablesleep 1
+sudo pmset -bc disablesleep 1
 
 while true; do
     sleep 1
