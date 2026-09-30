@@ -15,13 +15,13 @@ while getopts "hv" flag; do
 done
 
 cleanup() {
-    sudo pmset -bc disablesleep 0
+    sudo pmset -a disablesleep 0
     exit 1;
 }
 
 trap cleanup SIGINT
 
-sudo pmset -bc disablesleep 1
+sudo pmset -a disablesleep 1
 
 while true; do
     sleep 1
